@@ -154,8 +154,6 @@ After training, you’ll have:
 └── scaler.pkl
 
 yaml
-Copy code
-
 ---
 
 ## Author
