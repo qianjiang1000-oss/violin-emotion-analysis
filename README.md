@@ -130,7 +130,7 @@ Copy code
    - Replace your dataset and CSV in `/data/`.
    - Rerun all cells from Cell 1.5 onward to train from scratch.
 
-## 🧩 Dependencies
+## Dependencies
 Installed automatically in Cell 1:
 librosa
 scikit-learn
