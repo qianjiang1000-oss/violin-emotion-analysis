@@ -26,17 +26,23 @@ Multi-emotion Support: Handles soft labels with probability distributions
 ## Installation:
 
 pip install librosa scikit-learn matplotlib numpy pandas noisereduce tensorflow shap soundfile tqdm joblib
-Project Structure
 
-## Folder Structure: 
+## Project Structure
 
 violin-emotion-analysis/
+
 ├── data/                    # Processed audio files
+
 ├── models/                  # Saved model files
+
 ├── emotion_labels.csv       # Emotion annotations with soft labels
+
 ├── hybrid_model/           # Trained hybrid model components
+
 │   ├── lstm_model.h5
+
 │   ├── rf_model.pkl
+
 │   └── meta.json
 
 ## Data Requirements
