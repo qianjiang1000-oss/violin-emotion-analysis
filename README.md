@@ -64,8 +64,11 @@ Additional columns for soft emotion probabilities (e.g., happy, sad, angry)
 Example:
 
 csv
+
 filename,emotion,happy,sad,angry
+
 violin1.wav,happy,0.8,0.1,0.1
+
 violin2.wav,sad,0.2,0.7,0.1
 
 ## Usage
