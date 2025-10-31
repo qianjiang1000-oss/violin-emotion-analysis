@@ -100,8 +100,8 @@ predictions = hybrid_model.predict(X_test)
 
 4. Explainability
 
-Generate SHAP analysis for feature importance
-Shows which audio features contribute to each emotion prediction
+- Generate SHAP analysis for feature importance
+- Shows which audio features contribute to each emotion prediction
 
 ## Feature Extraction
 The system extracts comprehensive audio features:
