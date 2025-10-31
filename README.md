@@ -72,35 +72,36 @@ violin1.wav,happy,0.8,0.1,0.1
 violin2.wav,sad,0.2,0.7,0.1
 
 ## Usage
-1. Data Preparation
+# 1. Data Preparation
 
-# Set your data paths
+ Set your data paths
 data_dir = '/path/to/audio/files'
 emotion_csv_path = '/path/to/emotion_labels.csv'
 
-# Create temporal dataset with augmentation
+Create temporal dataset with augmentation
 X, y_soft = create_temporal_dataset(data_dir, emotion_csv_path, augment=True)
 
-2. Model Training
+# 2. Model Training
 
-# The system automatically trains multiple runs and selects the best model
-# Training includes:
-# - LSTM for temporal sequence modeling
-# - Random Forest on LSTM embeddings
-# - Weighted fusion of predictions
+The system automatically trains multiple runs and selects the best model
+Training includes:
+- LSTM for temporal sequence modeling
+- Random Forest on LSTM embeddings
+- Weighted fusion of predictions
 
-3. Model Inference
+# 3. Model Inference
 
-# Load trained model
+Load trained model
+
 hybrid_model = HybridEmotionModel.load('hybrid_model')
 
-# Make predictions
+Make predictions
 predictions = hybrid_model.predict(X_test)
 
-4. Explainability
+# 4. Explainability
 
-# Generate SHAP analysis for feature importance
-# Shows which audio features contribute to each emotion prediction
+Generate SHAP analysis for feature importance
+Shows which audio features contribute to each emotion prediction
 
 ## Feature Extraction
 The system extracts comprehensive audio features:
@@ -148,14 +149,6 @@ Add new columns for soft label probabilities
 
 The model automatically adapts to the output dimension
 
-## Feature Engineering
-Modify extract_temporal_features() to include:
-
-Additional spectral features
-
-Custom temporal statistics
-
-Domain-specific audio characteristics
 
 ## Dependencies
 Audio Processing: librosa, noisereduce, soundfile
