@@ -46,14 +46,11 @@ violin-emotion-analysis/
 │   └── meta.json
 
 ## Data Requirements
-Audio Files Format: WAV files
+- Audio Files Format: WAV files
+- Sample rate: 44.1 kHz
+- Location: /kaggle/input/train-audio/audio/ or specified directory
 
-Sample rate: 44.1 kHz
-
-Location: /kaggle/input/train-audio/audio/ or specified directory
-
-Emotion Labels CSV
-Required columns:
+Emotion Labels CSV Required columns:
 
 filename: Name of the audio file
 
@@ -105,28 +102,22 @@ predictions = hybrid_model.predict(X_test)
 
 ## Feature Extraction
 The system extracts comprehensive audio features:
-
-Spectral Features: MFCCs, chroma, spectral contrast
-
-Temporal Features: RMS energy, zero-crossing rate
-
-Expression Features: Pitch, tonality, articulation
-
-Statistical Summaries: Mean, standard deviation, temporal curves
+- Spectral Features: MFCCs, chroma, spectral contrast
+- Temporal Features: RMS energy, zero-crossing rate
+- Expression Features: Pitch, tonality, articulation
+- Statistical Summaries: Mean, standard deviation, temporal curves
 
 ## Model Architecture
 Hybrid Emotion Model
-LSTM Component: Bidirectional LSTM with layer normalization
 
-Captures temporal dependencies in audio sequences
-
-Outputs 64-dimensional embeddings
+LSTM Component: 
+- Bidirectional LSTM with layer normalization
+- Captures temporal dependencies in audio sequences
+- Outputs 64-dimensional embeddings
 
 Random Forest Component:
-
-Takes LSTM embeddings as input
-
-Provides robust regression on emotion probabilities
+- Takes LSTM embeddings as input
+- Provides robust regression on emotion probabilities
 
 Fusion: Weighted combination (70% LSTM + 30% RF)
 
@@ -135,15 +126,13 @@ The model predicts probability distributions across emotion categories.
 (Customizable based on your label set)
 
 ## Performance Metrics
-R² Score: Measures prediction accuracy for soft labels
-
-Cross-validation: Multiple training runs with best model selection
-
-Early Stopping: Prevents overfitting during LSTM training
+- R² Score: Measures prediction accuracy for soft labels
+- Cross-validation: Multiple training runs with best model selection
+- Early Stopping: Prevents overfitting during LSTM training
 
 ## Customization
 Adding New Emotions:
-Update the emotion labels in your CSV file
+Update the emotion labels in your CSV file.
 
 Add new columns for soft label probabilities
 
@@ -151,17 +140,12 @@ The model automatically adapts to the output dimension
 
 
 ## Dependencies
-Audio Processing: librosa, noisereduce, soundfile
-
-Machine Learning: scikit-learn, tensorflow, shap
-
-Utilities: numpy, pandas, matplotlib, joblib
+- Audio Processing: librosa, noisereduce, soundfile
+- Machine Learning: scikit-learn, tensorflow, shap
+- Utilities: numpy, pandas, matplotlib, joblib
 
 ## Notes
-The system is optimized for violin audio but can be adapted for other instruments
-
-Default parameters work well for 3-5 second audio clips
-
-For longer recordings, adjust window_size and hop_time parameters
-
-GPU acceleration recommended for LSTM training
+- The system is optimized for violin audio but can be adapted for other instruments
+- Default parameters work well for 3-5 second audio clips
+- For longer recordings, adjust window_size and hop_time parameters
+- GPU acceleration recommended for LSTM training
